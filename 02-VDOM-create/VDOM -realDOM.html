@@ -9,6 +9,7 @@
 
 <body>
     <div id="test"></div>
+    <div id="demo"></div>
     <!--react.development.js 最先引入-->
     <script type="text/javascript" src="../js/react.development.js"></script>
     <!--react-dom.development.js -->
@@ -23,6 +24,9 @@
                 <span>Hello,React</span>
             </h1>) 
         ReactDOM.render(VDOM, document.getElementById('test'))
+        //关于虚拟DOM
+        //本质是object类型对象， 虚拟DOM轻，是React内部在用，不需要真实DOM那么多属性
+        //虚拟DOM最终会被react转化为真实DOM，呈现在页面上
     </script>
 
 </body>

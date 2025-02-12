@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsx语法规则</title>
+    <style>
+        .title {
+            background-color: orange;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test"></div>
+    <!--react.development.js 最先引入-->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!--react-dom.development.js -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!--babel.min.js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <!--一定要写babel -->
+    <script type="text/babel">
+
+        const myId = 'aTgUiGu'
+        const myData = 'HeLlo,rEaCt'
+        
+        const VDOM = (
+        <div>
+            <h2 className="title" id={myId.toLowerCase()}>
+                <span style={{color:'white', fontSize: '30px'}}>{myData.toLocaleLowerCase()}</span>
+            </h2>
+            
+            <input type="text" />
+        </div>
+        )
+        
+        ReactDOM.render(VDOM, document.getElementById('test'))
+        
+            /*
+
+            1. no '' when create VDOM.
+            2. use {} to use JS
+            3. class -> className
+            // 4. style = {{key:value}}
+            5. only can have one root tag
+            6. tag has to be closed
+            7. writing jsx then tanslate to html
+            8. tag start with lowercase, then translate to html tag
+            9. if start with uppercase, react will render, but if not defined, will throw error
+
+            */
+
+
+
+
+    </script>
+
+</body>
+
+</html>
