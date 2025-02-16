@@ -15,9 +15,13 @@
         <script type="text/javascript" src="../js/babel.min.js"></script>
         <!--一定要写babel -->
         <script type="text/babel">
-            //1.创建虚拟dom
-            const VDOM = <h1>Hello,React</h1> /*一定不写单引号，不是字符串*/
-            ReactDOM.render(VDOM, document.getElementById('test'))
+            //函数式组件
+            function MyComponent(){
+                console.log(this); //此处this是undefined因为babel开启了严格模式，
+                return <h2>我是函数定义的组件</h2>
+            }
+            
+            ReactDOM.render(<MyComponent/>,document.getElementById('test'))
         </script>
         
     </body>
