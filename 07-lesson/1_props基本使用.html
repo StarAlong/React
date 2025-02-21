@@ -18,10 +18,8 @@
 	<script type="text/javascript" src="../js/babel.min.js"></script>
 
 	<script type="text/babel">
-		//创建组件
 		class Person extends React.Component{
 			render(){
-				// console.log(this);
 				const {name,age,sex} = this.props
 				return (
 					<ul>
@@ -32,7 +30,6 @@
 				)
 			}
 		}
-		//渲染组件到页面
 		ReactDOM.render(<Person name="jerry" age={19}  sex="男"/>,document.getElementById('test1'))
 		ReactDOM.render(<Person name="tom" age={18} sex="女"/>,document.getElementById('test2'))
 
