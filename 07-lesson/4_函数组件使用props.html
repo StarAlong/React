@@ -15,7 +15,6 @@
 	<script type="text/javascript" src="../js/prop-types.js"></script>
 
 	<script type="text/babel">
-		//创建组件
 		function Person (props){
 			const {name,age,sex} = props
 			return (
@@ -34,10 +33,9 @@
 
 		//指定默认标签属性值
 		Person.defaultProps = {
-			sex:'男',//sex默认值为男
-			age:18 //age默认值为18
+			sex:'男',
+			age:18 
 		}
-		//渲染组件到页面
 		ReactDOM.render(<Person name="jerry"/>,document.getElementById('test1'))
 	</script>
 </body>
