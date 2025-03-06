@@ -7,15 +7,10 @@
     </head>
     <body>
         <div id="test"></div>
-        <!--react.development.js 最先引入-->
         <script type="text/javascript" src="../js/react.development.js"></script>
-        <!--react-dom.development.js -->
         <script type="text/javascript" src="../js/react-dom.development.js"></script> 
-        <!--babel.min.js -->
         <script type="text/javascript" src="../js/babel.min.js"></script>
-        <!--一定要写babel -->
         <script type="text/babel">
-            //函数式组件
             function MyComponent(){
                 console.log(this); //此处this是undefined因为babel开启了严格模式，
                 return <h2>我是函数定义的组件</h2>
