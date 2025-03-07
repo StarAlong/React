@@ -6,18 +6,25 @@
         <title>hello_react</title>
     </head>
     <body>
-        <div id="test"></div>
-        <!--react.development.js 最先引入-->
-        <script type="text/javascript" src="../js/react.development.js"></script>
-        <!--react-dom.development.js -->
-        <script type="text/javascript" src="../js/react-dom.development.js"></script> 
-        <!--babel.min.js -->
-        <script type="text/javascript" src="../js/babel.min.js"></script>
-        <!--一定要写babel -->
-        <script type="text/babel">
-            //1.创建虚拟dom
-            const VDOM = <h1>Hello,React</h1> /*一定不写单引号，不是字符串*/
-            ReactDOM.render(VDOM, document.getElementById('test'))
+       
+        <script type="text/javascript">
+            let arr1 = [1, 2,3,4,5]
+            let arr2 =[2,4,6,8,10]
+            console.log(...arr1) //array
+            let arr3 = [...arr1, ...arr2]
+            console.log(...arr3) //连接数组
+
+            function sum(a,b,c){
+                return a+b+c
+            }
+     
+             function sum(...numbers){
+                numbers.reduce((preValue, currentValue) => {
+                return preValue + currentValue
+            })
+        }
+            console.log(sum(1,2,3))
+          
         </script>
         
     </body>
