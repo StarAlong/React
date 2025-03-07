@@ -31,7 +31,8 @@
 
 		const p = {name:'老刘',age:18,sex:'女'}
 		// ReactDOM.render(<Person name={p.name} age={p.age} sex={p.sex}/>,document.getElementById('test3'))
-		ReactDOM.render(<Person {...p}/>,document.getElementById('test3')) //Syntactic sugar
+		ReactDOM.render(<Person {...p}/>,document.getElementById('test3')) //Syntactic sugar， react可以展开运算符，只适用于标签属性的传递
+		
 	</script>
 </body>
 </html>
