@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lightbox Viewer</title>
+    <style>
+        html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+header {
+  margin-top: 100px;
+  justify-content: center;
+  background-color: rgb(211, 221, 224);
+  font-size: 3rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  margin-top: -100px
+  
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.1);
+}
+
+
+.lightbox {
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+    </style>
+</head>
+
+<body>
+    <header>Museum Gallery</header>
+
+    <div class="gallery">
+    <img class="gallery-item" src="https://cdn.freecodecamp.org/curriculum/labs/stonehenge-thumbnail.jpg">
+    <img class="gallery-item" src="https://cdn.freecodecamp.org/curriculum/labs/storm-thumbnail.jpg">
+    <img class="gallery-item" src="https://cdn.freecodecamp.org/curriculum/labs/trees-thumbnail.jpg">
+     </div>
+     
+
+    <div class="lightbox">
+
+    <img id="lightbox-image">
+
+        <span id="close">&times</span>
+
+        </div>
+
+
+
+
+<script>
+const galleryItems = document.querySelectorAll(".gallery-item")
+const lightbox = document.querySelector('.lightbox')
+const lightboxImage = document.getElementById("lightbox-image")
+const closeButton = document.getElementById("close")
+
+const fullSizeImages = {
+  'stonehenge-thumbnail': 'https://cdn.freecodecamp.org/curriculum/labs/stonehenge.jpg',
+  'storm-thumbnail':'https://cdn.freecodecamp.org/curriculum/labs/storm.jpg',
+  'trees-thumbnail': 'https://cdn.freecodecamp.org/curriculum/labs/trees.jpg'
+}
+
+function openLightbox (imageSrc) {
+  lightbox.style.display = 'flex';
+  lightboxImage.src = imageSrc;
+}
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+
+galleryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const imageSrc = item.src.replace('-thumbnail', '')
+    openLightbox(imageSrc)
+  })
+})
+
+closeButton.addEventListener('click', closeLightbox);
+
+lightbox.addEventListener('click', (e) => {
+  if(e.target === lightbox) {
+    closeLightbox()
+  }
+})
+
+
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
